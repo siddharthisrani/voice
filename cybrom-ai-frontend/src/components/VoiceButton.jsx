@@ -2,10 +2,11 @@ export default function VoiceButton({ onSpeak, listening }) {
   return (
     <button
       onClick={onSpeak}
-      className={`px-6 py-3 rounded-full text-white text-lg
-        ${listening ? "bg-red-500" : "bg-indigo-600"}`}
+      className={`w-16 h-16 rounded-full flex items-center justify-center
+      shadow-xl transition
+      ${listening ? "bg-red-500 scale-110" : "bg-indigo-500"}`}
     >
-      {listening ? "🎙 Listening..." : "🎤 Ask Cybrom"}
+      🎤
     </button>
   );
 }

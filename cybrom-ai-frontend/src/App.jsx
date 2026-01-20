@@ -57,11 +57,23 @@ function normalizeText(text) {
   const { start, listening } = useVoice(handleVoice);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6">
-      <h1 className="text-3xl font-bold mb-6">Cybrom Voice AI</h1>
+  <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-black to-purple-900 text-white flex flex-col">
 
-      <VoiceButton onSpeak={start} listening={listening} />
+    {/* Header */}
+    <div className="p-4 text-center font-semibold text-lg border-b border-white/10">
+      Cybrom AI Assistant
+    </div>
+
+    {/* Chat Area */}
+    <div className="flex-1 overflow-y-auto p-4">
       <ChatBox question={question} answer={answer} />
     </div>
-  );
+
+    {/* Mic Button */}
+    <div className="p-4 flex justify-center">
+      <VoiceButton onSpeak={start} listening={listening} />
+    </div>
+  </div>
+);
+
 }
